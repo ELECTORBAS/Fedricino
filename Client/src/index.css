@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+/* #0A400C, 819067, B1AB86, FEFAE0 */
+
+/* @theme {
+  font-
+} */
+
+@utility text-gradient {
+  background: linear-gradient(to bottom, #ffffff, #898989);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility abs-center {
+  @apply flex justify-center items-center;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+@layer components {
+  main {
+    @apply w-dvw bg-[#0A400C] text-white;
+  }
+  nav {
+    @apply fixed top-5 z-10 w-full flex justify-between items-center gap-3.5 bg-[#819067] h-12 p-2 backdrop-blur-2xl;
+
+    div {
+      @apply abs-center gap-2 font-serif;
+
+      h2 {
+        @apply text-xl;
+      }
+    }
+
+    .links {
+      @apply flex gap-5 font-sans;
+
+      a {
+        @apply cursor-pointer hover:text-amber-100;
+      }
+    }
+  }
+  #Home {
+    @apply z-10 min-h-dvh w-full border border-transparent text-xl;
+
+    h1 {
+      @apply text-8xl mt-36 font-serif text-center abs-center;
+    }
+
+    .body {
+      .content {
+        @apply h-full flex justify-between items-center mt-96;
+
+        p:nth-child(1) {
+          @apply text-3xl text-left ms-10;
+
+          span {
+            @apply font-serif font-bold text-amber-100;
+          }
+        }
+        p:nth-child(2) {
+          @apply text-left me-12;
+
+          a {
+            @apply underline text-sm cursor-pointer;
+          }
+        }
+      }
+    }
+  }
+  video {
+    @apply w-full md:h-[80%] h-full absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
+  }
+  #Menu {
+    h1{
+      @apply w-screen text-center pt-22 text-6xl font-serif;
+    }
+
+    .container{
+      @apply mt-26 ml-11;
+      
+      .cards {
+        @apply flex flex-col justify-around gap-8;
+
+        .card-skeleton{
+          @apply bg-[#B1AB86] hover:bg-[#afa774] transition-all duration-300 hover:cursor-pointer hover:scale-105 p-4 w-64 h-64 flex flex-col rounded-2xl mb-32;
+        }
+
+        h3{
+          @apply text-4xl font-bold;
+        }
+  
+        .dishes{
+          @apply flex gap-5 ;
+        }
+  
+        .card {
+          @apply min-w-14 h-24 flex flex-col justify-center gap-8;
+        }
+      }
+    }
+
+  }
+}
