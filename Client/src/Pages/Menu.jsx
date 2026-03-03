@@ -28,7 +28,7 @@ const Menu = () => {
           <h3>Recommended</h3>
           <div className="dishes">
             {dishes.map((dish, i) => {
-              const { title, description, price } = dish;
+              const { title, description, price, rating } = dish;
               return (
                 <Card
                   className="card"
@@ -36,6 +36,7 @@ const Menu = () => {
                   title={title}
                   description={description}
                   price={price}
+                  rating={rating}
                 />
               );
             })}
@@ -45,7 +46,7 @@ const Menu = () => {
           <h3>Chef's Choice</h3>
           <div className="dishes">
             {chefRecommend.map((dish, i) => {
-              const { title, description, price } = dish;
+              const { title, description, price, rating } = dish;
               return (
                 <Card
                   className="card"
@@ -53,6 +54,7 @@ const Menu = () => {
                   title={title}
                   description={description}
                   price={price}
+                  rating={rating}
                 />
               );
             })}
